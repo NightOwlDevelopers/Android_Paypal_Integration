@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity
 {
     public static final int PAYPAL_REQ_CODE = 7171;
     private PayPalConfiguration payPalConfiguration = new PayPalConfiguration()
-            .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX) //use sandbox because we are on test
-            .clientId("clientid");
+            .environment(PayPalConfiguration.ENVIRONMENT_PRODUCTION) //use sandbox because we are on test
+            .clientId("AdMMvor29uoaeEH35DuZHz4ohCmc6wHy-ZnqskrqwBiNpuWysoup7-GNju0vtCeAwwJt3dn1d0_c_Vyy");
     
     Button paynow;
     EditText enterpayment;
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity
     private void paymentProcess()
     {
         amount = enterpayment.getText().toString();
-        PayPalPayment payPalPayment = new PayPalPayment(new BigDecimal(String.valueOf(amount)), "USD", "Donated by DESDEV",
+        PayPalPayment payPalPayment = new PayPalPayment(new BigDecimal(String.valueOf(amount)), "USD", "XP BOOSTER",
                 PayPalPayment.PAYMENT_INTENT_SALE);
 
         Intent intent = new Intent(this, PaymentActivity.class);
